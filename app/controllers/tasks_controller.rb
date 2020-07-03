@@ -25,7 +25,7 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = Task.new(params[:id])
+    @task = Task.find(params[:id])
   end
 
   def update
@@ -53,7 +53,7 @@ class TasksController < ApplicationController
   #Strong Parameter
   
   def task_params
-    paramas.require(:task).permit(:content)
+    params.require(:task).permit(:content)
   end
   
 end
